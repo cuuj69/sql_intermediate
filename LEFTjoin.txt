@@ -1,0 +1,17 @@
+Another Type of JOIN is the LEFT JOIN
+The LEFT JOIN returns all rows from the left table(first table), even if there are no matches in the right table(second table)
+
+This means that if there no matches for the 'ON' clause in the table on the right(second table), the join will stil return the rows from the first table in the result
+
+
+
+LEFT join example
+
+In our case, the customers table includes customers that do not have any records in the PhoneNumbers tables
+
+SELECT c.firstname, c.lastname, c.city, pn.number, pn.type from customers as c left join PhoneNumbers as pn on c.id=pn.customer_id
+
+The result set contains all the rows from the left table matching data from the right table
+
+Nb:
+If no match is found for a particular row, NULL is returned for the columns of the right(second table)

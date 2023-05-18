@@ -1,0 +1,8 @@
+Alias:
+Because you use the full column names when joining tables, the query can get really long. To make it easier and shorter, we can provide nicknames for our tables
+
+SELECT c.firstname, c.lastname, c.city, pn.number, pn.type FROM customers AS c JOIN PhoneNumbers AS pn
+
+
+Noteworthy:
+After giving the nicknames(also called table aliases), we can use them in the query, both in the select list and in the condition

@@ -1,0 +1,15 @@
+Multiple Tables:
+
+Often, data is stored in mulitple linked tables.
+
+
+We can select data from multiple tables by separating them with a comma in a SELECT statement
+
+
+SELECT firstname,lastname,city,number,type
+FROM Customers, PhoneNumbers
+WHERE Customers.id = PhoneNumbers.customer_id
+
+
+Noteworthy:
+The Where condition tells the SQL to combine only those rows that have corresponding customer_id

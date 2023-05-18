@@ -1,0 +1,18 @@
+select firsname,lastname,
+case
+    when age >=65 then 'senior'
+    when age >25 and age < 65 then 'adult'
+end as category
+from customers
+
+
+For all other cases, we can set a value using else keyword
+
+select firstname, lastname,
+case
+    when age>=65 then 'senior'
+    when age>=23 and age <65 then 'adult'
+    else 'Youth'
+end as category
+from customers
+

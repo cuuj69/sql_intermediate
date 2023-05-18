@@ -1,0 +1,3 @@
+The 'Group BY' clause is used to group rows with the same values in one or more columns into summary rows.
+
+In this case

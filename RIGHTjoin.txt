@@ -1,0 +1,31 @@
+Similarly, the RIGHT JOIN returns all the rows from the right table, even if there are no matches in the left table
+
+select c.firstname, c.lastname, c.city, pn.number, pn.type from PhoneNumbers as pn right join customers as c on c.id=pn.customer_id order by c.id
+
+
+Exercise:
+Number of Books 
+You are working on the library database, which contains the Books and Authors tables.
+
+Columns of the Books table: id, name, year, author_id.
+
+Columns of the Authors table: id, name.
+
+ 
+
+Write a query to get the author names and the number of books they have in the Books table.
+
+Note that some authors do not have any books associated with them. In this case, the result needs to include their names and have 0 as the count. The count column should be called books in the result.
+
+level
+Sort the result by the number of books, from highest to
+
+
+select A.name, count(B.id) AS books FROM Books AS B RIGHT JOIN
+Authors as A ON B.author_id = A.id
+GROUP BY A.name
+ORDER BY books desc
+
+So we select A.name(Authors.name) , Count(B.id) AS FROM Books AS B(So since originally the first table is Books, and the Authors table comes subsequently) RIGHT JOIN Authors AS A ON b.author_id = A.id 
+GROUP By A.name, since we want to find the summary of these author counts
+

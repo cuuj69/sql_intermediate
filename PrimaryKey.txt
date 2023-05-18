@@ -1,0 +1,21 @@
+Before looking at how the data will look in these tables, let's first create the relationship between them using keys
+
+The primary key constraint is used to uniquely identify rows of a table
+
+In most cases, the primary key is  the auto_increment column, so for our Customers and PhoneNumbers tables, its the id column 
+it is set when creating the table
+
+CREATE TABLE Customers(
+    id int NOT NULL AUTO_INCREMENT,
+    firstname varchar(255),
+    lastname varchar (255),
+    PRIMARY KEY (id)
+)
+
+Primary Key
+Here are some rules for primary keys
+-A primary key must contain unique values
+-A primary key column cannot have NULL values
+-A table can only have one primary key
+
+Nb:This is why the auto_increment column is a good fit, as it satisfies these conditions

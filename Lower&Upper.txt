@@ -1,0 +1,7 @@
+The lower function converts the text in the provided column to lowercase
+
+SELECT LOWER(firstname) FROM customers;
+
+Similarly, the  UPPER function converts the text to uppercase;
+
+SELECT UPPER(firstname) FROM Customers;

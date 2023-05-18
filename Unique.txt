@@ -1,0 +1,26 @@
+The unique constraint ensures that all values in a column are different
+
+A PRIMARY KEY constraint automatically has a UNIQUE constraint
+
+Nb:
+However, you can have many UNIQUE constraints per table, but only one PRIMARY KEY constraint per table
+
+
+Altering  the lastname column of our Customers table:
+
+ALTER TABLE Customers
+ADD UNIQUE (lastname)
+
+Nb: You can have multiple UNIQUE columns
+
+
+Unique
+
+Now when we try to insert a Customer with a lastname that is already present in the table, we will get an error:
+
+INSERT INTO Custormes(firstname,lastname,city,age) VALUES ('demo','Anderson','London',24)
+
+
+
+Noteworthy:
+NULL values are ignored by UNIQUE, meaning you can have multiple NULL values in a UNIQUE column

@@ -1,0 +1,38 @@
+SQL also supports basic mathematical operations
+
+For example, let's say that we run a promotion and the customers get a discount based on their age. The discount percentage is half of the age value:
+
+
+SELECT firstname, lastname, age /2 AS discount FROM Customers
+
+
+Calculating the BMI values:
+
+SELECT firstname, lastname weight/(height*height) AS bmi FROM Customers
+
+Nb:
+The BMI is equal to the weight divided by the square of the height( the values are in metric units)
+
+
+
+SQL has many math functions
+
+We can query the min and  max age numbers:
+
+SELECT MAX(age) FROM Customers
+SELECT MIN(age) FROM Customers
+
+
+The AVG() function allows you to calculate the average value.
+
+SELECT AVG(age) FROM  Customers
+
+
+
+COUNT
+
+As already established, the COUNT function is used to return the count of rows in a query.
+
+We can combine it with a GROUP BY, to find out how many customers we have in each city
+
+SELECT city, COUNT(*) AS ct FROM Customers GROUP BY city ORDER BY ct DESC

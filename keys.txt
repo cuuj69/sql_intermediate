@@ -1,0 +1,11 @@
+Another important concept in database are keys
+They are used to define relationships between tables
+
+Let's say we need to store multiple phone numbers for each of our Customers
+Storing it in the same table would be problematic, as each customer can have a variable number of phone numbers
+
+To store the phone numbers, we need to create another table, PhoneNumbers:
+
+id customer_id number type
+
+The customer_id column is used to link the row with the corresponding company in the Customers table

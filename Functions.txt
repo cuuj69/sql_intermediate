@@ -1,0 +1,8 @@
+We can combine multiple functions into a single query
+
+This is a column that has the first letter of the firstname, followed by a dot and the lastname in all uppercase
+
+SELECT CONCAT(SUBSTRING(firsname,1,1),'. ',UPPER(lastname)) FROM Customers
+
+
+select concat(nickname,MAX(score as best)) FROM 

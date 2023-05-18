@@ -1,0 +1,10 @@
+Substring
+
+The SUBSTRING function allows you to extract part of the text in a column. it takes the starting position and the number of characters we want to extract
+
+For example, let's take the first 3 characters of the firstname
+
+
+SELECT SUBSTRING(firstname, 1,3) FROM Customers
+
+Ohok so instead of index the SUBSTRING function takes the following arguments (column_name,starting position,number of characters)

@@ -1,0 +1,5 @@
+CONCAT
+
+The concat function can take any number of arguments, combining them together in the result
+
+SELECT CONCAT(firstname, ' ', lastname) AS name FROM Customers

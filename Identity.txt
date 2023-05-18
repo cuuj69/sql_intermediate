@@ -1,0 +1,26 @@
+As we have seen, most tables we work with have a column called id which contains a number
+
+That column is often called the identity column and is similar to a row number in excel
+
+Often the id is an integer (a whole number) which is incremented with each new row
+
+SQL allows you to create a column that gets automatically incremented with each new row
+
+That is done using the AUTO_INCREMENT, the value is automatically set when new rows are inserted, without the need for us to specify it
+
+Illustration
+
+create table customers (
+    id int not null auto_increment,
+    firstname varchar(255),
+    lastname varchar(255)
+);
+
+
+
+By default, the auto_increment column starts with the value 1 This can be changed if needed, using:
+
+alter table Customers
+auto_increment=555
+
+Now, when a new row is inserted, the id column will start from the given value

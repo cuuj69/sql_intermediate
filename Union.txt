@@ -1,0 +1,22 @@
+Occasionally, you might need to combine data from mulitiple similar tables into one comprehensive dataset
+
+For example, you might have multiple tables storing Customers data and you want to combine them into one result set.
+
+This can be done using the UNION statement
+
+UNION:
+The UNION Operator is used to combine the result-set of two or more SELECT statements
+
+Consider having a Customers and Contacts tables, both having firstname lastname and age columns
+
+SELECT firstname lastname, age FROM Customers
+UNION
+select firstname, lastname, age from Contacts
+
+
+
+Nb:
+All SELECT statements withing the  UNION must have the same number of columns. The columns must also have the same data types. Also, the columns in each select statement must be in the same order
+
+
+UNION removes the duplicate records

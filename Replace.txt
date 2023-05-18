@@ -1,0 +1,6 @@
+The Replace function replaces all occurences of the given string with another one. For example, let's replace New York with NY in the city column
+
+SELECT REPLACE(city,'New york','NY') FROM table_name;
+
+Nb:
+The change is done on the result set, not the actual table

@@ -1,0 +1,30 @@
+UNION ALL is similar to UNION, but does not remove the duplicates
+
+SELECT firstname, lastname, age FROM Customers
+UNION ALL
+SELECT firstname, lastname, age FROM Contacts
+
+
+In the advent that the other table we are concatening is short of one column we need, we can simply add them to the second select as NULL
+
+select firstname, lastname,age,city, from customers
+UNION
+SELECT firstname, lastname, age, NULL FROM Contacts
+
+
+Noteworthy:
+
+We can also use other constant values for the extra columns, just remember, that the value has to have the same data type as the column of the first table
+
+
+Conditions:
+
+We can also set conditions for each select in the UNION
+
+For example
+
+SELECT firstname, lastname, age FROM Customers
+WHERE age > 30
+UNION
+Select firstname, lastname, age FROM Contacts
+WHERE age < 25

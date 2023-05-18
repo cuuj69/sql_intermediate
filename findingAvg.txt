@@ -1,0 +1,47 @@
+In this lesson we will learn how to solve a slightly more complex problem- we need to find the average number of phone numbers the Customers in our table have.
+
+To calculate the avergage, we need to find the number of phone numbers that each customer has, then use the avg function over the result set
+
+
+Firstly, we join the tables
+
+select c.id, c.firstname, c.lastname, pn.number, pn.type from Customers as c left join PhoneNumbers AS pn
+ON C.id =pn.customer_id
+
+
+We used a LEFT JOIN as not all customers have a phone number
+This is an important point. By simply joining the tables we would get the wrong result for the average
+
+Finding the Average
+
+
+Now we can group the data based on our customers and find the number of phone numbers each of them has:
+
+select c.id, count(pn.number) as count
+from Customers as c left join PhoneNumbers AS PN ON
+c.id = pn.customer_id
+Group by c.id
+
+Our custom 'count' column now has the number of phone numbers for each customer as we grouped the query by the customer id
+
+
+As you can see from the results, the count also includes 0 values:
+that's because we used the left join and some of the customers don't have any matching phone numbers
+
+
+Now, we need to find the average of these values
+For that, we need another select query over the data of the join
+
+select avg(count) from(
+    select c.id, count(pn.number) as count
+    from customers as c left join phonenumbers as pn
+    on c.id = pn.customer_id
+    group by c.id
+) As numbers
+
+
+We aliased the query as 'Numbers' and selected the average value of the count column from it
+
+By enclosing a select query in parenthesis, we are able to give it a name and use it just like a table.
+
+It is also important to give the custom columns name aliases, so you can select them

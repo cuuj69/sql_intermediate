@@ -1,0 +1,19 @@
+Another type of constraint is the Foreign Key
+
+A foreign Key is a column in one table that refers to the Primary Key in another table
+
+This constraint is used to prevent actions that would destroy links between tables
+
+In our case, the customer_id column in the PhoneNumbers table is the foreign key, which refers to the primary key id in the customers table
+
+
+CREATE TABLE PhoneNumbers(
+    id int NOT NULL AUTO_INCREMENT,
+    customer_id int NOT NULL,
+    numbers varchar(55),
+    type varchar(55),
+    PRIMARY KEY (id),
+    FOREIGN KEY (customer_id) REFERENCES Customers(id)
+)
+
+The Foreign Key constraint prevents invalid data from being inserted into the foreign key column, because it has to be one of the values contained in the linked table
